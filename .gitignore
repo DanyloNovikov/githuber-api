@@ -27,3 +27,6 @@
 
 # Ignore master key for decrypting credentials and more.
 /config/master.key
+docker/vault/test/.env
+docker/vault/development/.env
+.docker-sync
