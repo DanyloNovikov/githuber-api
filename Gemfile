@@ -9,9 +9,9 @@ gem "puma", "~> 5.0"
 
 group :development, :test do
   gem "pry"
-end
-
-group :development do
+  gem "rspec-rails"
+  gem "rubocop", require: false
+  gem "rubocop-rails", require: false
 end
 
 gem "tzinfo-data", platforms: %i[ mingw mswin x64_mingw jruby ]

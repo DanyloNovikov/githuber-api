@@ -1,0 +1,43 @@
+require: rubocop-rails
+
+Rails:
+  Enabled: true
+AllCops:
+  TargetRubyVersion: 2.7.4
+  NewCops: enable
+  SuggestExtensions: false
+  Exclude:
+    - app/admin/*
+    - vendor/**/*
+    - db/**/*
+    - config/**/*
+    - bin/**/*
+    - spec/**/*
+    - Gemfile
+    - Rakefile
+    - config.ru
+
+Style/Documentation:
+  Enabled: false
+Lint/DuplicateBranch:
+  Enabled: false
+Style/RescueStandardError:
+  Enabled: false
+SkipsModelValidations:
+  Enabled: false
+Lint/MissingSuper:
+ Enabled: false
+Rails/LexicallyScopedActionFilter:
+  Enabled: false
+Rails/InverseOf:
+  Enabled: false
+Metrics/AbcSize:
+  Enabled: false
+Metrics/MethodLength:
+  Enabled: false
+Rails/UniqueValidationWithoutIndex:
+  Enabled: false
+Lint/EmptyBlock:
+  Enabled: false
+Metrics/BlockLength:
+  Enabled: false
