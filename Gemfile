@@ -7,6 +7,17 @@ gem "rails", "~> 7.0.4"
 gem "pg", "~> 1.1"
 gem "puma", "~> 5.0"
 
+# Serailziers for API
+gem 'jsonapi-serializer'
+
+# Rest client service
+gem 'rest-client', '~> 2.1'
+gem 'net-http'
+
+# validation controller level
+gem 'dry-transaction'
+gem 'dry-validation'
+
 group :development, :test do
   gem "pry"
   gem "rspec-rails"

@@ -1,6 +1,10 @@
 Rails.application.routes.draw do
-  # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 
-  # Defines the root path route ("/")
-  # root "articles#index"
+  namespace :v1 do
+    resource :projects, controller: 'projects' do
+      post :link_project,        on: :collection
+      get  :all_projects,        on: :collection
+      get  :project_calculation, on: :collection
+    end
+  end
 end
