@@ -1,7 +1,7 @@
 class CreateProjectCalculations < ActiveRecord::Migration[7.0]
   def up
     create_table :project_calculations do |t|
-      t.references :projects
+      t.references :project
       
       t.string  :username,                   null: false, default: ''
       
@@ -11,7 +11,7 @@ class CreateProjectCalculations < ActiveRecord::Migration[7.0]
       t.integer :create_pull_request_score,  null: false, default: 0
       t.integer :pull_request_comment_score, null: false, default: 0
       t.integer :pull_request_review_score,  null: false, default: 0
-
+      t.integer :total_score,                null: false, default: 0
       t.timestamps
     end
 

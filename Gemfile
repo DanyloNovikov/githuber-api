@@ -11,7 +11,7 @@ gem "puma", "~> 5.0"
 gem 'jsonapi-serializer'
 
 # Rest client service
-gem 'rest-client', '~> 2.1'
+gem 'faraday'
 gem 'net-http'
 
 # validation controller level

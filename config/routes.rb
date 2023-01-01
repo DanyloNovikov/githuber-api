@@ -4,7 +4,6 @@ Rails.application.routes.draw do
     resource :projects, controller: 'projects' do
       post :link_project,        on: :collection
       get  :all_projects,        on: :collection
-      get  :project_calculation, on: :collection
     end
   end
 end

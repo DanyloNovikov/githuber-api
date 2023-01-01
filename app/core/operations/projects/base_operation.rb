@@ -66,7 +66,9 @@ module Operations
         record.errors.each { |error| add_error(key: error.attribute, message: error.full_message) }
       end
 
-      private def generate_error_message(key, value)
+      private
+
+      def generate_error_message(key, value)
         key = key.to_s.tr('.', '_').humanize
 
         case value

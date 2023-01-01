@@ -17,6 +17,8 @@ AllCops:
     - Rakefile
     - config.ru
 
+Rails/DeprecatedActiveModelErrorsMethods:
+  Enabled: false
 Style/Documentation:
   Enabled: false
 Lint/DuplicateBranch:
