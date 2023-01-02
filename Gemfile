@@ -14,16 +14,24 @@ gem 'jsonapi-serializer'
 gem 'faraday'
 gem 'net-http'
 
-# validation controller level
+# validation for controllers level 
 gem 'dry-transaction'
 gem 'dry-validation'
 
 group :development, :test do
   gem "pry"
   gem "rspec-rails"
-  gem "rubocop", require: false
+  gem "rubocop",       require: false
   gem "rubocop-rails", require: false
 end
+
+group :test do
+  gem 'factory_bot_rails'
+  gem 'shoulda-matchers', '~> 5.0'
+  gem 'faker'
+  gem 'database_cleaner-active_record'
+  gem 'webmock'
+  end
 
 gem "tzinfo-data", platforms: %i[ mingw mswin x64_mingw jruby ]
 gem "bootsnap", require: false

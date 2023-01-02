@@ -8,9 +8,7 @@ module Services
 
         pull_requests.each do |pull_request|
           # rubocop:disable Layout/LineLength
-          unless (DateTime.now - 1.week).beginning_of_week <= DateTime.parse(pull_request['created_at']) && (DateTime.now - 1.week).end_of_week >= DateTime.parse(pull_request['created_at'])
-            next
-          end
+          next unless (DateTime.now - 1.week).beginning_of_week <= DateTime.parse(pull_request['created_at']) && (DateTime.now - 1.week).end_of_week >= DateTime.parse(pull_request['created_at'])
           # rubocop:enable Layout/LineLength
 
           parsed_pull_requests.push({
