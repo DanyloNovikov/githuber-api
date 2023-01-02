@@ -2,7 +2,7 @@
 
 module V1
   class ProjectsController < ApplicationController
-    provides action: :link_project,        via: :projects
-    provides action: :all_projects,        via: :projects
+    provides action: :calculate_project,        via: :projects
+    provides action: :index,                    via: :projects
   end
 end

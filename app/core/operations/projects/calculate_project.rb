@@ -2,7 +2,7 @@
 
 module Operations
   module Projects
-    class LinkProject < BaseOperation
+    class CalculateProject < BaseOperation
       def execute
         provider_data = Services::GithubClient.get_pull_requests(
           owner_username: resource_params[:owner_username],

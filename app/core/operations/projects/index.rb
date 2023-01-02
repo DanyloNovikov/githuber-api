@@ -2,7 +2,7 @@
 
 module Operations
   module Projects
-    class AllProjects < BaseOperation
+    class Index < BaseOperation
       def execute
         response_success
       end
