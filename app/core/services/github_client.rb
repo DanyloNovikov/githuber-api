@@ -4,7 +4,9 @@ module Services
   class GithubClient
     class << self
       def get_pull_requests(owner_username:, project_name:)
-        send_request(base_url: "https://api.github.com/repos/#{owner_username}/#{project_name}/pulls")
+        send_request(
+          base_url: "https://api.github.com/repos/#{owner_username}/#{project_name}/pulls"
+        )
       end
 
       def get_comments(owner_username:, project_name:, pull_request_id:)
@@ -39,9 +41,6 @@ module Services
               page: counter
             }
           )
-          # TODO: need add validation if ProjectCalculation with same create_period exist
-          # need to take first commit and if he created high that past_week_end then skip
-          # and return already call calculate check result.
 
           response = conn.get
           response_body = JSON.parse(response.body)
@@ -50,6 +49,9 @@ module Services
             total_response.push(response_body) # for errors because return hash
             stop = true
           elsif response_body.empty?
+            stop = true
+          elsif response_body.count <= 100
+            total_response += response_body
             stop = true
           else
             total_response += response_body
