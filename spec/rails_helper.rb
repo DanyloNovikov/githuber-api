@@ -1,11 +1,14 @@
 require 'spec_helper'
 require 'webmock/rspec'
+require 'database_cleaner/active_record'
 
 ENV['RAILS_ENV'] ||= 'test'
 require_relative '../config/environment'
 
 abort("The Rails environment is running in production mode!") if Rails.env.production?
 require 'rspec/rails'
+
+Dir[Rails.root.join('spec', 'support', '**', '*.rb')].sort.each { |f| require f }
 
 begin
   ActiveRecord::Migration.maintain_test_schema!
@@ -20,6 +23,7 @@ RSpec.configure do |config|
   config.filter_rails_from_backtrace!
 
   config.include Request::JsonHelpers
+  config.include Request::StubRequests
   config.include FactoryBot::Syntax::Methods
 
   Shoulda::Matchers.configure do |config|
@@ -30,6 +34,7 @@ RSpec.configure do |config|
   end
 
   DatabaseCleaner.allow_remote_database_url = true
+
   config.before(:suite) do
     Rails.application.load_seed
     DatabaseCleaner.strategy = :transaction

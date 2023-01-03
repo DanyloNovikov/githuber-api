@@ -1,6 +1,6 @@
 FactoryBot.define do
   factory :project_calculation do
-    username { Faker::Name.unique.gsub!(' ', '') }
+    username { Faker::Name.unique.name.gsub(' ', '') }
 
     
     start_week { (DateTime.now - 1.week).beginning_of_week }
